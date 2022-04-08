@@ -5,7 +5,6 @@
     enable = true;
     package = pkgs.runCommand "wezterm-0.0.0" { } "mkdir $out";
     extraConfig = ''
-      local wezterm = require 'wezterm';
       return {
         font = wezterm.font("JetBrains Mono"),
         font_size = 16.0,

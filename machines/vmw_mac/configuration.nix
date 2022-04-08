@@ -8,7 +8,7 @@ in
   ];
 
   security.pam.enableSudoTouchIdAuth = true;
-  security.pam.enableSudoTouchIdReattach = true;
+  security.pam.enablePamReattach = true;
 
   homebrew = {
     enable = true;
@@ -18,9 +18,7 @@ in
       brewfile = true;
       noLock = true;
     };
-  };
 
-  homebrew = {
     brews = [
       "pam-reattach"
     ];
@@ -35,12 +33,15 @@ in
 
     casks = [
       "wezterm"
+      "maccy"
+      "karabiner-elements"
     ];
   };
-  # users.users."${username}" = {
-  # home = "/Users/${username}";
-  # shell = pkgs.zsh;
-  # };
+
+  users.users."${username}" = {
+    home = "/Users/${username}";
+    # shell = pkgs.zsh;
+  };
   programs.zsh.enable = true;
   home-manager = {
     useGlobalPkgs = true;
@@ -49,11 +50,11 @@ in
     users."${username}" = {
       home.stateVersion = "21.11";
       imports = [
-        ../../configs/tmux.nix
         ../../configs/bat.nix
-        ../../configs/wezterm.nix
         ../../configs/neovim.nix
         ../../configs/starship.nix
+        ../../configs/tmux.nix
+        ../../configs/wezterm.nix
       ];
       home.packages = with pkgs; [
         kubectl
