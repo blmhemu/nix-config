@@ -17,6 +17,7 @@ in
       imports = [
         ../../configs/tmux.nix
         ../../configs/bat.nix
+        ../../configs/wezterm.nix
       ];
       home.packages = with pkgs; [
         kubectl
