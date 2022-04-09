@@ -9,3 +9,6 @@ sh <(curl -L https://nixos.org/nix/install)
 # Run below for bootstrapped setup
 nix build --extra-experimental-features "flakes nix-command" .\#vmw_mac
 ```
+## Thoughts
+### Shell
+* https://htr3n.github.io/2018/07/faster-zsh/
