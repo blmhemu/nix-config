@@ -8,6 +8,7 @@ These are my dotfiles on steroids (powered by nix).
 sh <(curl -L https://nixos.org/nix/install)
 # Run below for bootstrapped setup
 nix build --extra-experimental-features "flakes nix-command" .\#vmw_mac
+./result/sw/bin/darwin-rebuild switch --flake .\#vmw_mac
 ```
 ## Thoughts
 ### Shell
